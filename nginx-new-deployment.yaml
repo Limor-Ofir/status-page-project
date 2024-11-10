@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-new
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-new
+  template:
+    metadata:
+      labels:
+        app: nginx-new
+    spec:
+      containers:
+      - name: nginx-new
+        image: 992382545251.dkr.ecr.us-east-1.amazonaws.com/limor-ecr:nginx-new2
+        ports:
+        - containerPort: 80
+
+

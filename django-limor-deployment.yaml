@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-limor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django-limor
+  template:
+    metadata:
+      labels:
+        app: django-limor
+    spec:
+      containers:
+      - name: django-limor
+        image: 992382545251.dkr.ecr.us-east-1.amazonaws.com/limor-ecr:django-limor2
+        ports:
+        - containerPort: 8001  # Adjust based on your Django app's port
