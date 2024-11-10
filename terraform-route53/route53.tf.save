@@ -1,7 +1,0 @@
-# Data source for the existing ALB
-data "aws_lb" "existing_alb" {
-  name = "limor-cluster-alb"  # Replace with the actual name of your ALB
-}
-
-# Create a new Route 53 hosted zone
-resource "aws_route53_zone" "mai
